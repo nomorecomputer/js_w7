@@ -1,0 +1,11 @@
+@mixin text-multiline-truncate($font-size, $line-height, $max-line-Number) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  $maxHeight: $font-size * $line-height * $max-line-Number;
+  max-height: $maxHeight;
+
+  // 僅支援 支援webkit的browser 如：chrome、Safari
+  display: -webkit-box; /* 使用弹性盒子模型 */
+  -webkit-box-orient: vertical; /* 设置盒子方向为垂直 */
+  -webkit-line-clamp: $max-line-Number;
+}
